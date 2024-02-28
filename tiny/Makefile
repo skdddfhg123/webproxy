@@ -17,6 +17,15 @@ cgi:
 	(cd cgi-bin; make)
 
 clean:
-	rm -f *.o tiny *~
+	rm -f *.o *~
 	(cd cgi-bin; make clean)
 
+fclean:
+	$(MAKE) clean
+	(cd cgi-bin; make fclean)
+	rm -f tiny
+
+re:
+	$(MAKE) fclean
+	$(MAKE) all
+	(cd cgi-bin; make re)

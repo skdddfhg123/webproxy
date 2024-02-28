@@ -3,8 +3,20 @@ CFLAGS = -O2 -Wall -I ..
 
 all: adder
 
-adder: adder.c
-	$(CC) $(CFLAGS) -o adder adder.c
+adder: adder.o
+	$(CC) $(CFLAGS) -o adder adder.o
+
+adder.o: adder.c
+	$(CC) $(CFLAGS) -c adder.c
 
 clean:
-	rm -f adder *~
+	rm -f *~
+
+fclean:
+	$(MAKE) clean
+	rm -f adder
+
+re:
+	$(MAKE) fclean
+	$(MAKE) all
+
