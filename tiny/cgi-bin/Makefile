@@ -10,7 +10,7 @@ adder.o: adder.c
 	$(CC) $(CFLAGS) -c adder.c
 
 clean:
-	rm -f *~
+	rm -f *.o *~
 
 fclean:
 	$(MAKE) clean
